@@ -1,0 +1,10 @@
+steps:
+- name: 'docker'
+  args: ['build','-t','gcr.io/$PROJECT_ID/gcpdevops','.']   
+images:
+- 'gcr.io/$PROJECT_ID/gcpdevops'
+
+
+
+
+/* two steps.fisrt one is build the docker image and 2nd one upload the image to our project.this will run on docker container or an infrasructure that gcp owns , that is cloud build.*/

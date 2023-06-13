@@ -1,4 +1,4 @@
 # Docker Flask Application
 
-- This application is written in pPython
+- This application is written in Python
 - It shall be deployed on GKE

@@ -9,17 +9,17 @@ steps:
 #build the container image
 - name: "gcr.io/cloud-bulders/docker"
   args: ["build","-t","gcr.io/$PROJECT_ID/gcpdevops","."]   
-#push container image to gke cluster
+#push container image to artifact registry
 - name: "gcr.io/cloud-bulders/docker"
   args: ["push","gcr.io/$PROJECT_ID/gcpdevops"]   
-#deploy container name to gke
+#deploy container image to gke
 - name: "gcr.io/cloud-bulders/gke-deploy"
   args: 
   -run
   - --filename=gke.yaml
   - --image=gcr.io/$PROJECT_ID/gcpdevops
   - --location=u-central-c
-  - --cluster=gke-gcp-devops
+  - --cluster=gcp-devops-project
   - --namespace=gcp-devops-prod
 
 
